@@ -16,6 +16,7 @@ limitations under the License.
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <!-- <link rel="stylesheet" href="/style.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -36,16 +37,109 @@ limitations under the License.
     <div style="padding: 5%;">
         <h2>ENCUESTAS DE SATISFACCION DE USUARIO UNIDAD MEDICA SAN LUCAS</h2>
         <hr>
+        <br>
         <h4 style="margin: 0 auto;">Sexo</h4>
+        <p></p>
         <p></p>
         <div style="width:50%">
             <canvas id="gender"></canvas>
         </div>
         <hr>
         <h4 style="margin: 0 auto;">Edad</h4>
-        <P></P>
+        <p></p>
+        <p></p>
         <div style="width:50%">
             <canvas id="age"></canvas>
+        </div>
+
+        <hr>
+        <h4 style="margin: 0 auto;">¿Por qué medio de comunicación nos contactó?</h4>
+        <p></p>
+        <p></p>
+        <div style="width:50%">
+            <canvas id="medio"></canvas>
+        </div>
+
+        <hr>
+        <h4 style="margin: 0 auto;">¿Le fue facil encontrarnos?</h4>
+        <p></p>
+        <p></p>
+        <div style="width:50%">
+            <canvas id="facil"></canvas>
+        </div>
+
+        <hr>
+        <h4 style="margin: 0 auto;">¿Cómo califica la rapidez en la atención de nuestros servicios?</h4>
+        <p></p>
+        <p></p>
+        <div style="width:50%">
+            <canvas id="atencion"></canvas>
+        </div>
+
+        <hr>
+        <h4 style="margin: 0 auto;">¿La información recibida fue clara?</h4>
+        <p></p>
+        <p></p>
+        <div style="width:50%">
+            <canvas id="info"></canvas>
+        </div>
+
+        <hr>
+        <h4 style="margin: 0 auto;">¿El trato que recibió al momento de ingresar y durante la consulta como lo califica?
+        </h4>
+        <p></p>
+        <p></p>
+        <div style="width:50%">
+            <canvas id="trato"></canvas>
+        </div>
+
+        <hr>
+        <h4 style="margin: 0 auto;">¿Qué le parecen las instalaciones de la Unidad Medica Integral San Lucas?</h4>
+        <p></p>
+        <p></p>
+        <div style="width:50%">
+            <canvas id="instalaciones"></canvas>
+        </div>
+
+        <hr>
+        <h4 style="margin: 0 auto;">¿Considera que la cuota de recuperación por consulta está acorde a su nivel
+            socioeconómico?</h4>
+        <p></p>
+        <p></p>
+        <div style="width:50%">
+            <canvas id="cuota"></canvas>
+        </div>
+
+        <hr>
+        <h4 style="margin: 0 auto;">¿El tratamiento que recibió en demanda a sus necesidades de salud?</h4>
+        <p></p>
+        <p></p>
+        <div style="width:50%">
+            <canvas id="tratamiento"></canvas>
+        </div>
+
+        <hr>
+        <h4 style="margin: 0 auto;">¿Cómo le pareció el servicio en general?</h4>
+        <p></p>
+        <p></p>
+        <div style="width:50%">
+            <canvas id="servicio"></canvas>
+        </div>
+
+        <hr>
+        <h4 style="margin: 0 auto;">¿El tiempo de atención? (recepción, consulta, compra de medicamentos)</h4>
+        <p></p>
+        <p></p>
+        <div style="width:50%">
+            <canvas id="tiempo"></canvas>
+        </div>
+
+        <hr>
+        <h4 style="margin: 0 auto;">¿Recomendaría la Unidad Medica Integral San Lucas a otras personas?</h4>
+        <p></p>
+        <p></p>
+        <div style="width:50%">
+            <canvas id="recomendacion"></canvas>
         </div>
     </div>
 </body>
@@ -163,6 +257,496 @@ limitations under the License.
             animation: animation
         }
     });
+
+    //MEDIO
+
+    var ctx = document.getElementById('medio').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Vía telefónica', 'Página web', 'Facebook', 'Publicidad en carteles', 'Recomendaciones', 'Otros'],
+            datasets: [{
+                label: 'Edad',
+                data: [9, 1, 4, 9, 49, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            legend: {
+                display: false
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        //beginAtZero: true
+                        min: 0,
+                        max: 60
+                    }
+                }]
+            },
+            tooltips: {
+                enabled: false
+            },
+            hover: {
+                animationDuration: 0
+            },
+            animation: animation
+        }
+    });
+
+    //MEDIO
+
+    var ctx = document.getElementById('facil').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Si', 'No'],
+            datasets: [{
+                label: 'Edad',
+                data: [71, 4],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 99, 132, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            legend: {
+                display: false
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        //beginAtZero: true
+                        min: 0,
+                        max: 80
+                    }
+                }]
+            },
+            tooltips: {
+                enabled: false
+            },
+            hover: {
+                animationDuration: 0
+            },
+            animation: animation
+        }
+    });
+
+    // atencion
+
+    var ctx = document.getElementById('atencion').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Excelente', 'Buena', 'Regular', 'Mala'],
+            datasets: [{
+                label: 'Edad',
+                data: [24, 49, 2, 0],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            legend: { display: false },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        //beginAtZero: true
+                        min: 0,
+                        max: 60
+                    }
+                }]
+            },
+            tooltips: {
+                enabled: false
+            },
+            hover: {
+                animationDuration: 0
+            },
+            animation: animation
+        }
+    });
+
+    //
+
+    var ctx = document.getElementById('info').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Si', 'No'],
+            datasets: [{
+                label: 'Edad',
+                data: [75, 0],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 99, 132, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            legend: { display: false },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        //beginAtZero: true
+                        min: 0,
+                        max: 80
+                    }
+                }]
+            },
+            tooltips: {
+                enabled: false
+            },
+            hover: {
+                animationDuration: 0
+            },
+            animation: animation
+        }
+    });
+
+    //
+
+    var ctx = document.getElementById('trato').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Excelente', 'Bueno', 'Regular', 'Malo'],
+            datasets: [{
+                label: 'Edad',
+                data: [41, 34, 0, 0],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            legend: { display: false },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        //beginAtZero: true
+                        min: 0,
+                        max: 50
+                    }
+                }]
+            },
+            tooltips: {
+                enabled: false
+            },
+            hover: {
+                animationDuration: 0
+            },
+            animation: animation
+        }
+    });
+
+    //
+
+    var ctx = document.getElementById('instalaciones').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Excelente', 'Bueno', 'Regular', 'Malo'],
+            datasets: [{
+                label: 'Edad',
+                data: [31, 44, 0, 0],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            legend: { display: false },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        //beginAtZero: true
+                        min: 0,
+                        max: 50
+                    }
+                }]
+            },
+            tooltips: {
+                enabled: false
+            },
+            hover: {
+                animationDuration: 0
+            },
+            animation: animation
+        }
+    });
+
+    var ctx = document.getElementById('cuota').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Si', 'No'],
+            datasets: [{
+                label: 'Edad',
+                data: [71, 4],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 99, 132, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            legend: { display: false },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        //beginAtZero: true
+                        min: 0,
+                        max: 80
+                    }
+                }]
+            },
+            tooltips: {
+                enabled: false
+            },
+            hover: {
+                animationDuration: 0
+            },
+            animation: animation
+        }
+    });
+
+    var ctx = document.getElementById('tratamiento').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Excelente', 'Bueno', 'Regular', 'Malo'],
+            datasets: [{
+                label: 'Edad',
+                data: [30, 45, 0, 0],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            legend: { display: false },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        //beginAtZero: true
+                        min: 0,
+                        max: 50
+                    }
+                }]
+            },
+            tooltips: {
+                enabled: false
+            },
+            hover: {
+                animationDuration: 0
+            },
+            animation: animation
+        }
+    });
+
+    
+    var ctx = document.getElementById('servicio').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Excelente', 'Bueno', 'Regular', 'Malo'],
+            datasets: [{
+                label: 'Edad',
+                data: [33, 41, 0, 0],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            legend: { display: false },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        //beginAtZero: true
+                        min: 0,
+                        max: 50
+                    }
+                }]
+            },
+            tooltips: {
+                enabled: false
+            },
+            hover: {
+                animationDuration: 0
+            },
+            animation: animation
+        }
+    });
+
+    var ctx = document.getElementById('tiempo').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Rápido', 'Normal', 'Moderada', 'Lento'],
+            datasets: [{
+                label: 'Edad',
+                data: [18, 50, 7, 0],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            legend: { display: false },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        //beginAtZero: true
+                        min: 0,
+                        max: 60
+                    }
+                }]
+            },
+            tooltips: {
+                enabled: false
+            },
+            hover: {
+                animationDuration: 0
+            },
+            animation: animation
+        }
+    });
+
+    var ctx = document.getElementById('recomendacion').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Si', 'No'],
+            datasets: [{
+                label: 'Edad',
+                data: [75, 0],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 99, 132, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            legend: { display: false },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        //beginAtZero: true
+                        min: 0,
+                        max: 80
+                    }
+                }]
+            },
+            tooltips: {
+                enabled: false
+            },
+            hover: {
+                animationDuration: 0
+            },
+            animation: animation
+        }
+    });
+
 </script>
 
 </html>
